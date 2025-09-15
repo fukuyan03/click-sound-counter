@@ -1,0 +1,6 @@
+eval "SSH_AUTH_SOCK=/var/folders/z3/46msbllj6wg36j7fx417jwpc0000gn/T//ssh-B0Nu1G26FUrA/agent.15049; export SSH_AUTH_SOCK;
+SSH_AGENT_PID=15050; export SSH_AGENT_PID;
+echo Agent pid 15050;"
+eval "SSH_AUTH_SOCK=/var/folders/z3/46msbllj6wg36j7fx417jwpc0000gn/T//ssh-8jBtfn9H2QvX/agent.15062; export SSH_AUTH_SOCK;
+SSH_AGENT_PID=15063; export SSH_AGENT_PID;
+echo Agent pid 15063;".pub
