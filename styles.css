@@ -6,7 +6,7 @@
 /* 中央寄せ＆基本 */
 html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 
-/* 背景をジム画像＋暗めのオーバーレイ */
+/* 背景 */
 body{
   position: relative;
   min-height: 100%;
