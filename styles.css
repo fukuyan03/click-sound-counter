@@ -131,3 +131,9 @@ a.btn, button.btn {
   appearance: none;
   text-decoration: none;
 }
+
+/* ツイートボタンの位置 */
+.tweet-area {
+  margin-top: 120px; 
+  text-align: right; 
+}
