@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,46 +7,42 @@
   <link rel="stylesheet" href="./styles.css" />
   <link rel="preload" as="image" href="./images/gym.png">
 </head>
-
 <body class="fade-in center">
   <main>
     <h1>筋肉は裏切らない！</h1>
     <h1>筋肉から逃げるな！</h1>
     <div id="count" class="count">0</div>
-    <!-- ボタンをaタグにする -->
     <a id="startLink" class="btn" href="./app.html">開始する</a>
   </main>
 
-  <!-- 説明ボタン（右下固定） -->
-  <button id="infoButton" class="btn info-btn">説明</button>
+  <!-- 右下：説明ボタン -->
+  <button id="infoButton" class="btn info-btn" type="button">説明</button>
 
-  <!-- ポップアップ -->
-  <div id="infoPopup" class="popup hidden">
+  <!-- 右下上：ポップアップ -->
+  <div id="infoPopup" class="popup hidden" role="dialog" aria-modal="false" aria-labelledby="popupTitle">
     <div class="popup-content">
-      <h2>アプリの使い方</h2>
+      <h2 id="popupTitle">アプリの使い方</h2>
       <p>
         開始ボタンを押すとカウント画面に進みます。<br>
         マウスを持って腕立て伏せや腹筋の度にクリック！<br>
-        EnterやSpaceを押してもカウントされます。
+        一度押すとEnterやSpaceを押してもカウントされます。
       </p>
-      <button id="closePopup" class="btn btn-small">閉じる</button>
+      <button id="closePopup" class="btn btn-small" type="button">閉じる</button>
     </div>
   </div>
 
   <script>
-    // ▼ 開始ボタン → app.htmlへ遷移（フェード付き）
+    // 開始→遷移（フェード）
     const link = document.getElementById('startLink');
     link.addEventListener('click', (e) => {
       e.preventDefault();
       document.body.classList.add('fade-out');
-      setTimeout(() => {
-        window.location.href = link.getAttribute('href');
-      }, 350);
+      setTimeout(() => { window.location.href = link.getAttribute('href'); }, 350);
     });
 
-    // ▼ ポップアップ制御
+    // 説明ポップアップ
     const infoButton = document.getElementById('infoButton');
-    const infoPopup = document.getElementById('infoPopup');
+    const infoPopup  = document.getElementById('infoPopup');
     const closePopup = document.getElementById('closePopup');
 
     infoButton.addEventListener('click', () => {
