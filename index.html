@@ -14,12 +14,21 @@
     <h1>筋肉は裏切らない！</h1>
     <h1>筋肉から逃げるな！</h1>
     <div id="count" class="count">0</div>
-    <button id="clickBtn" class="btn big">開始！</button>
+   <!-- ボタンをaタグにする（JSなくても遷移できる） -->
+    <a id="startLink" class="btn" href="./app.html">開始する</a>
   </main>
 
-  <!-- 短いSEを置いてね（例：sounds/click.mp3） -->
-  <audio id="clickAudio" src="./sounds/click.mp3" preload="auto"></audio>
-
-  <script src="./app.js"></script>
+   <script>
+        const link = document.getElementById('startLink');
+        link.addEventListener('click', (e) => {
+            // フェード演出のために一旦止める（JSが動くときだけ）
+            e.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+            // a要素のhrefへ遷移（相対パス/絶対パスどちらでもOK）
+            window.location.href = link.getAttribute('href');
+            }, 350); // styles.cssのフェード時間に合わせる
+        });
+ </script>
 </body>
 </html>
