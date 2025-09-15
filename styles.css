@@ -1,0 +1,53 @@
+/* フェード表示/非表示 */
+.fade-in { opacity: 0; animation: fadeIn .35s forwards; }
+@keyframes fadeIn { to { opacity: 1; } }
+.fade-out { opacity: 0 !important; transition: opacity .35s; }
+
+/* 中央寄せ＆基本 */
+html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+
+/* 背景をジム画像＋暗めのオーバーレイにして文字を読みやすく */
+body{
+  position: relative;
+  min-height: 100%;
+  color: #fff;
+  background: #000;
+}
+body::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(0deg, rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("./images/gym.png") center/cover no-repeat; /* ← ここだけファイル名に合わせて */
+  z-index: -1;
+}
+
+
+.center { display: grid; place-items: center; padding: 24px; }
+main { text-align: center; max-width: 680px; }
+
+/* カウント表示 */
+.count {
+  font-size: clamp(48px, 10vw, 96px);
+  font-weight: 800;
+  margin: 8px 0 20px;
+}
+
+/* ボタン */
+.btn {
+  font: inherit;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: #0ea5e9; /* 水色 */
+  color: #fff;
+  cursor: pointer;
+}
+.btn:hover { filter: brightness(1.05); }
+.btn:active { transform: translateY(1px); }
+.btn.big {
+  font-size: clamp(18px, 3.5vw, 28px);
+  padding: 22px 28px;
+  min-width: min(90vw, 520px);
+}

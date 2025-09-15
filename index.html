@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>カウント中</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preload" as="image" href="./images/gym.png">
+</head>
+
+<body class="fade-in center">
+  <main>
+    <h1>カウント中</h1>
+    <div id="count" class="count">0</div>
+    <button id="clickBtn" class="btn big">クリック！</button>
+  </main>
+
+  <!-- 短いSEを置いてね（例：sounds/click.mp3） -->
+  <audio id="clickAudio" src="./sounds/click.mp3" preload="auto"></audio>
+
+  <script src="./app.js"></script>
+</body>
+</html>
