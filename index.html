@@ -21,13 +21,11 @@
    <script>
         const link = document.getElementById('startLink');
         link.addEventListener('click', (e) => {
-            // フェード演出のために一旦止める（JSが動くときだけ）
             e.preventDefault();
             document.body.classList.add('fade-out');
             setTimeout(() => {
-            // a要素のhrefへ遷移（相対パス/絶対パスどちらでもOK）
-            window.location.href = link.getAttribute('href');
-            }, 350); // styles.cssのフェード時間に合わせる
+                window.location.href = link.getAttribute('href');
+            }, 350); 
         });
  </script>
 </body>
