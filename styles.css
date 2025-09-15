@@ -34,20 +34,26 @@ main { text-align: center; max-width: 680px; }
   margin: 8px 0 20px;
 }
 
-/* ボタン */
+/* ボタン共通スタイル */
 .btn {
-  font: inherit;
-  padding: 14px 20px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-  background: #0ea5e9; /* 水色 */
+  display: inline-block;
+  padding: 20px 40px;       /* ボタンの内側余白（大きさの調整） */
+  font-size: 2rem;          /* 文字の大きさ */
+  font-weight: bold;
   color: #fff;
+  background-color: lab(45.31% 69.38 55.31); /* 背景色は自由に */
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;    /* <a>でも下線を消す */
+  transition: transform 0.1s ease-in-out;
 }
-.btn:hover { filter: brightness(1.05); }
-.btn:active { transform: translateY(1px); }
-.btn.big {
-  font-size: clamp(18px, 3.5vw, 28px);
-  padding: 22px 28px;
-  min-width: min(90vw, 520px);
+
+.btn:hover {
+  transform: scale(1.05);   /* ホバー時にちょっと大きく */
+}
+
+.btn:active {
+  transform: scale(0.95);   /* クリック時に少し縮む */
 }
