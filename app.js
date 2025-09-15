@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Enter/Spaceでもカウント
   window.addEventListener('keydown', (e) => {
-    if (e.code === 'Enter' || e.code === 'Space') {
+    if ((e.code === 'Enter' || e.code === 'Space') && !e.repeat) {
       e.preventDefault();
       clickBtn.click();
     }
