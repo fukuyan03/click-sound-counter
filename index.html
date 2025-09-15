@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>筋肉喜びタイム発動中</title>
+  <title>筋肉喜びタイム</title>
   <link rel="stylesheet" href="./styles.css" />
   <link rel="preload" as="image" href="./images/gym.png">
 </head>
@@ -14,8 +14,20 @@
     <h1>筋肉は裏切らない！</h1>
     <h1>筋肉から逃げるな！</h1>
     <div id="count" class="count">0</div>
-   <!-- ボタンをaタグにする（JSなくても遷移できる） -->
+    <!-- ボタンをaタグにする -->
     <a id="startLink" class="btn" href="./app.html">開始する</a>
+    <!-- 説明ボタン -->
+    <button id="infoButton" class="btn info-btn">説明</button>
+    <!-- ポップアップ -->
+    <div id="infoPopup" class="popup hidden">
+        <div class="popup-content">
+            <h2>アプリの使い方</h2>
+            <p>開始ボタンを押すとカウント画面に進みます。<br>
+            マウスを持って腕立て伏せや腹筋の度にクリック！<br>
+            EnterやSpaceを押してもカウントされます。</p>
+            <button id="closePopup" class="btn">閉じる</button>
+        </div>
+    </div>
   </main>
 
    <script>
@@ -27,6 +39,30 @@
                 window.location.href = link.getAttribute('href');
             }, 350); 
         });
- </script>
+    </script>
+
+    <script>
+        const link = document.getElementById('startLink');
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = link.getAttribute('href');
+            }, 350);
+        });
+
+         // ポップアップ制御
+        const infoButton = document.getElementById('infoButton');
+        const infoPopup = document.getElementById('infoPopup');
+        const closePopup = document.getElementById('closePopup');
+
+        infoButton.addEventListener('click', () => {
+            infoPopup.classList.remove('hidden');
+        });
+
+        closePopup.addEventListener('click', () => {
+            infoPopup.classList.add('hidden');
+        });
+    </script>
 </body>
 </html>
