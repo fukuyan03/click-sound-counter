@@ -6,7 +6,7 @@
 /* 中央寄せ＆基本 */
 html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 
-/* 背景をジム画像＋暗めのオーバーレイにして文字を読みやすく */
+/* 背景をジム画像＋暗めのオーバーレイ */
 body{
   position: relative;
   min-height: 100%;
@@ -19,7 +19,7 @@ body::before{
   inset: 0;
   background:
     linear-gradient(0deg, rgba(0,0,0,.45), rgba(0,0,0,.45)),
-    url("./images/gym.png") center/cover no-repeat; /* ← ここだけファイル名に合わせて */
+    url("./images/gym.png") center/cover no-repeat; 
   z-index: -1;
 }
 
@@ -37,8 +37,8 @@ main { text-align: center; max-width: 680px; }
 /* ボタン共通スタイル */
 .btn {
   display: inline-block;
-  padding: 40px 80px;       /* ボタンの内側余白（大きさの調整） */
-  font-size: 3rem;          /* 文字の大きさ */
+  padding: 40px 80px;      
+  font-size: 3rem;          
   font-weight: bold;
   color: #fff;
   background-color: lab(45.31% 69.38 55.31); 
@@ -46,16 +46,16 @@ main { text-align: center; max-width: 680px; }
   border-radius: 12px;
   cursor: pointer;
   text-align: center;
-  text-decoration: none;    /* <a>でも下線を消す */
+  text-decoration: none;   
   transition: transform 0.1s ease-in-out;
 }
 
 .btn:hover {
-  transform: scale(1.05);   /* ホバー時にちょっと大きく */
+  transform: scale(1.05);  
 }
 
 .btn:active {
-  transform: scale(0.95);   /* クリック時に少し縮む */
+  transform: scale(0.95);   
 }
 
 /* 右下の説明ボタン */
@@ -72,13 +72,13 @@ main { text-align: center; max-width: 680px; }
 
 /* 閉じるボタンを説明ボタンと同じ色にする */
 #closePopup {
-  background-color: #2196f3; /* 説明ボタンと同じ青 */
+  background-color: #2196f3; 
   font-size: 14px;
   padding: 8px 14px;
   border-radius: 10px;
 }
 
-/* ポップアップ本体（初期は見えない） */
+/* ポップアップ本体（初期なし） */
 .popup{
   position: fixed;
   right: 20px;
@@ -126,7 +126,7 @@ main { text-align: center; max-width: 680px; }
   font-size: 13px;
 }
 
-/* a.btn と button.btn の見た目を揃える */
+/* 見た目を揃える */
 a.btn, button.btn {
   appearance: none;
   text-decoration: none;
