@@ -16,53 +16,49 @@
     <div id="count" class="count">0</div>
     <!-- ボタンをaタグにする -->
     <a id="startLink" class="btn" href="./app.html">開始する</a>
-    <!-- 説明ボタン -->
-    <button id="infoButton" class="btn info-btn">説明</button>
-    <!-- ポップアップ -->
-    <div id="infoPopup" class="popup hidden">
-        <div class="popup-content">
-            <h2>アプリの使い方</h2>
-            <p>開始ボタンを押すとカウント画面に進みます。<br>
-            マウスを持って腕立て伏せや腹筋の度にクリック！<br>
-            EnterやSpaceを押してもカウントされます。</p>
-            <button id="closePopup" class="btn">閉じる</button>
-        </div>
-    </div>
   </main>
 
-   <script>
-        const link = document.getElementById('startLink');
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            document.body.classList.add('fade-out');
-            setTimeout(() => {
-                window.location.href = link.getAttribute('href');
-            }, 350); 
-        });
-    </script>
+  <!-- 説明ボタン（右下固定） -->
+  <button id="infoButton" class="btn info-btn">説明</button>
 
-    <script>
-        const link = document.getElementById('startLink');
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            document.body.classList.add('fade-out');
-            setTimeout(() => {
-                window.location.href = link.getAttribute('href');
-            }, 350);
-        });
+  <!-- ポップアップ -->
+  <div id="infoPopup" class="popup hidden">
+    <div class="popup-content">
+      <h2>アプリの使い方</h2>
+      <p>
+        開始ボタンを押すとカウント画面に進みます。<br>
+        マウスを持って腕立て伏せや腹筋の度にクリック！<br>
+        EnterやSpaceを押してもカウントされます。
+      </p>
+      <button id="closePopup" class="btn btn-small">閉じる</button>
+    </div>
+  </div>
 
-         // ポップアップ制御
-        const infoButton = document.getElementById('infoButton');
-        const infoPopup = document.getElementById('infoPopup');
-        const closePopup = document.getElementById('closePopup');
+  <script>
+    // ▼ 開始ボタン → app.htmlへ遷移（フェード付き）
+    const link = document.getElementById('startLink');
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.body.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = link.getAttribute('href');
+      }, 350);
+    });
 
-        infoButton.addEventListener('click', () => {
-            infoPopup.classList.remove('hidden');
-        });
+    // ▼ ポップアップ制御
+    const infoButton = document.getElementById('infoButton');
+    const infoPopup = document.getElementById('infoPopup');
+    const closePopup = document.getElementById('closePopup');
 
-        closePopup.addEventListener('click', () => {
-            infoPopup.classList.add('hidden');
-        });
-    </script>
+    infoButton.addEventListener('click', () => {
+      infoPopup.classList.remove('hidden');
+      requestAnimationFrame(() => infoPopup.classList.add('show'));
+    });
+
+    closePopup.addEventListener('click', () => {
+      infoPopup.classList.remove('show');
+      setTimeout(() => infoPopup.classList.add('hidden'), 200);
+    });
+  </script>
 </body>
 </html>
