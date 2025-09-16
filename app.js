@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return 'big';
   };
 
-  // 単発再生
+  // 再生
   const play = (src, volume = 1.0) => {
     try {
       const a = new Audio(src);
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // 重み付きランダムで1つ再生
+  // ランダム再生＋音量調整
   const playRandomWeighted = () => {
     const key = pickWeighted();
     if (key === 'small') play(soundPaths.small, 1.0);   
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (key === 'big') play(soundPaths.big, 1.0);  
   };
 
-  // 50回ごと
+  // 50回
   const fifty = () => {
     play(soundPaths.extra, 1.0);
   };
