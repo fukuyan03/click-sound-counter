@@ -70,7 +70,7 @@ main { text-align: center; max-width: 680px; }
   border-radius: 10px;
 }
 
-/* 閉じるボタンを説明ボタンと同じ色にする */
+/* 説明閉じるボタン */
 #closePopup {
   background-color: #2196f3; 
   font-size: 14px;

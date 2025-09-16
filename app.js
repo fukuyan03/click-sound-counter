@@ -15,16 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 効果音パス
   const soundPaths = {
-    small: './sounds/kick_small.mp3',
-    medium: './sounds/kick_medium.mp3',
-    big: './sounds/kick_big.mp3',
+    small: './sounds/power.mp3',
+    medium: './sounds/protain.mp3',
+    big: './sounds/kyuin.mp3',
+    extra: '/sounds/Lvup.mp3',
   };
 
   // ▼ 抽選の重み合計1.0
   const weights = {
-    small: 0.5,
+    small: 0.55,
     medium: 0.35,
-    big: 0.15,
+    big: 0.1,
   };
 
   // 重み付き抽選
@@ -54,14 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // 重み付きランダムで1つ再生
   const playRandomWeighted = () => {
     const key = pickWeighted();
-    play(soundPaths[key]);
+    if (key === 'small') play(soundPaths.small, 1.0);   
+    if (key === 'medium') play(soundPaths.medium, 0.5); 
+    if (key === 'big') play(soundPaths.big, 1.0);  
   };
 
   // 50回ごと
-  const playAll = () => {
-    play(soundPaths.small, 0.9);
-    play(soundPaths.medium, 0.9);
-    play(soundPaths.big, 0.9);
+  const fifty = () => {
+    play(soundPaths.extra, 1.0);
   };
 
   // クリックでカウント＋効果音
@@ -70,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     countEl.textContent = String(count);
 
     if (count % 50 === 0) {
-      playAll();                 
+      fifty();                 
       return;
     }
 
